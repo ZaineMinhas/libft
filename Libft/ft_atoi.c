@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/18 15:41:03 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/18 15:54:00 by zminhas          ###   ########.fr       */
+/*   Created: 2020/11/18 17:50:02 by zminhas           #+#    #+#             */
+/*   Updated: 2020/11/18 18:33:59 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
+int		ft_atoi(const char *str)
 {
+	int pos_neg;
+	int number;
 	int i;
-	int j;
 
 	i = 0;
-	j = 0;
-	while (dest[i])
+	if ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
-	while (src[j] && j < dstsize)
+	pos_neg = 0;
+	if (str[i] == '-' || str[i] == '+' || str[i] == ' ')
 	{
-		dest[i + j] = src[j];
-		j++;
-	}
-	dest[i + j] = 0;
-	i = 0;
-	while (src[i])
+		if (str[i] == '-')
+			pos_neg = 1;
 		i++;
-	return (i);
+	}
+	number = 0;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		number *= 10 + (str[i] - 48);
+		i++;
+	}
+	if (pos_neg == 1)
+		return (-number);
+	return (number);
 }
