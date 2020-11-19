@@ -6,7 +6,7 @@
 #    By: zminhas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2020/11/19 11:58:43 by zminhas          ###   ########.fr        #
+#    Updated: 2020/11/19 12:34:39 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,10 +46,10 @@ ${NAME}:	${OBJS}
 all:		${NAME}
 
 clean:
-			rm -f ${OBJS}
+			@rm -f ${OBJS}
 
 fclean:		clean
-			rm -f ${NAME}
+			@rm -f ${NAME}
 
 re:			fclean all
 
