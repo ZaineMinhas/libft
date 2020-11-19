@@ -6,7 +6,7 @@
 #    By: zminhas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2020/11/19 12:34:39 by zminhas          ###   ########.fr        #
+#    Updated: 2020/11/19 13:15:11 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ SRCS	=	ft_atoi.c \
 			ft_tolower.c \
 			ft_toupper.c
 
-OBJS	=	${SRCS:.c =.o}
+OBJS	=	${SRCS:.c=.o}
 
 NAME	=	libft.a
 
@@ -41,15 +41,15 @@ NAME	=	libft.a
 			gcc -Wall -Wextra -Werror -c -I./includes $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-					ar -rcs $@ $^
+			ar -rcs $@ $^
 
 all:		${NAME}
 
 clean:
-			@rm -f ${OBJS}
+			rm -f ${OBJS}
 
 fclean:		clean
-			@rm -f ${NAME}
+			rm -f ${NAME}
 
 re:			fclean all
 
