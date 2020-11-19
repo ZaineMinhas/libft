@@ -6,7 +6,7 @@
 #    By: zminhas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2020/11/19 13:15:11 by zminhas          ###   ########.fr        #
+#    Updated: 2020/11/19 13:20:48 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,8 @@ OBJS	=	${SRCS:.c=.o}
 NAME	=	libft.a
 
 .c.o:
-			gcc -Wall -Wextra -Werror -c -I./includes $< -o ${<:.c=.o}
+			@gcc -Wall -Wextra -Werror -c -I./includes $< -o ${<:.c=.o}
+			@echo "Bien jeej !"
 
 ${NAME}:	${OBJS}
 			ar -rcs $@ $^
@@ -46,10 +47,12 @@ ${NAME}:	${OBJS}
 all:		${NAME}
 
 clean:
-			rm -f ${OBJS}
+			@rm -f ${OBJS}
+			@echo "jeej cleaner !"
 
 fclean:		clean
-			rm -f ${NAME}
+			@rm -f ${NAME}
+			@echo "jeej fcleaner !"
 
 re:			fclean all
 
