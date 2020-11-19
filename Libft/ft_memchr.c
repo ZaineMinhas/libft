@@ -6,7 +6,7 @@
 /*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 11:30:56 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/19 15:11:02 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/11/19 17:57:04 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	s2 = (unsigned const char *)s;
 	i = -1;
-	while (++i <= n)
+	while (++i < n)
 		if (s2[i] == (unsigned const char)c)
 			return ((void *)(s + i));
 	return (NULL);
