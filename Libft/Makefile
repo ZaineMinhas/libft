@@ -6,7 +6,7 @@
 #    By: zminhas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2020/11/19 13:20:48 by zminhas          ###   ########.fr        #
+#    Updated: 2020/11/19 15:29:18 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ NAME	=	libft.a
 			@echo "Bien jeej !"
 
 ${NAME}:	${OBJS}
-			ar -rcs $@ $^
+			@ar -rcs $@ $^
 
 all:		${NAME}
 
