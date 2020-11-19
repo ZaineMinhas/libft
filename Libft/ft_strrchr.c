@@ -6,7 +6,7 @@
 /*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 13:44:26 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/18 14:36:55 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/11/19 15:27:19 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ char	*ft_strrchr(const char *s, int c)
 		i++;
 	while (s[--i])
 		if (s[i] == c)
-			return (&s[i]);
+			return ((char *)(s + i));
 	return (NULL);
 }
