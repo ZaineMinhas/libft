@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/18 15:41:03 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/19 15:23:46 by zminhas          ###   ########.fr       */
+/*   Created: 2020/11/20 15:07:03 by zminhas           #+#    #+#             */
+/*   Updated: 2020/11/20 16:19:10 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,15 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
+	size_t dest_len;
 	size_t i;
-	size_t j;
 
-	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while (src[j] && j < dstsize)
-	{
-		dest[i + j] = src[j];
-		j++;
-	}
-	dest[i + j] = 0;
-	i = 0;
-	while (src[i])
-		i++;
-	return (i);
+	dest_len = ft_strlen(dest);
+	if (dstsize <= dest_len)
+		return (dstsize + ft_strlen(src));
+	i = -1;
+	while (src[++i] && i < dstsize - dest_len - 1)
+		dest[dest_len + i] = src[i];
+	dest[dest_len + i] = 0;
+	return (dest_len + ft_strlen(src));
 }

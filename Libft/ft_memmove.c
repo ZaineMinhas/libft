@@ -6,7 +6,7 @@
 /*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 11:19:49 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/19 17:24:49 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/11/20 12:39:16 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (NULL);
 	src2 = src;
 	dest2 = dest;
-
 	if (dest2 < src2)
 	{
 		i = -1;
