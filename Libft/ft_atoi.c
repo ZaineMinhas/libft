@@ -6,7 +6,7 @@
 /*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 17:50:02 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/20 19:59:58 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/11/22 13:28:25 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 int		ft_atoi(const char *str)
 {
-	unsigned long long	 	nb;
+	unsigned long long		nb;
 	int						pos_neg;
 	int						i;
-
 
 	i = 0;
 	pos_neg = 1;

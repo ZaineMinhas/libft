@@ -6,7 +6,7 @@
 /*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 15:26:03 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/20 18:53:40 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/11/22 17:27:15 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t		i;
 	void		*dest;
 
 	if (!(dest = malloc(sizeof(void) * (size * count))))
 		return (NULL);
-	i = -1;
 	ft_bzero(dest, (count * size));
 	return (dest);
 }
