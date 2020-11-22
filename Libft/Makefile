@@ -6,7 +6,7 @@
 #    By: zminhas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2020/11/22 17:14:20 by zminhas          ###   ########.fr        #
+#    Updated: 2020/11/22 18:32:53 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ SRCS	=	ft_atoi.c \
 			ft_substr.c \
 			ft_strjoin.c \
 			ft_strtrim.c \
+			ft_split.c
 
 OBJS	=	${SRCS:.c=.o}
 
