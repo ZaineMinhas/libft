@@ -6,7 +6,7 @@
 #    By: zminhas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2020/11/23 17:31:23 by zminhas          ###   ########.fr        #
+#    Updated: 2020/11/23 20:05:34 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,6 @@ LIGHTPURPLE	= $(shell tput -Txterm setaf 4)
 PURPLE		= $(shell tput -Txterm setaf 5)
 BLUE		= $(shell tput -Txterm setaf 6)
 WHITE		= $(shell tput -Txterm setaf 7)
-RED_NRV		= $(shell tput -Txterm setaf 9)
-PINK		= $(shell tput -Txterm setaf 13)
 RESET		= $(shell tput -Txterm sgr0)
 
 SRCS	=	ft_atoi.c \
@@ -51,9 +49,16 @@ SRCS	=	ft_atoi.c \
 			ft_strtrim.c \
 			ft_split.c \
 			ft_itoa.c \
-			ft_strmapi.c
+			ft_strmapi.c \
+			ft_putchar_fd.c \
+			ft_putstr_fd.c \
+			ft_putendl_fd.c \
+			ft_putnbr_fd.c
+SRCS_BONUS	=	
 
 OBJS	=	${SRCS:.c=.o}
+
+OBJS_BONUS	=	${SRCS_BONUS:.c=.o}
 
 NAME	=	libft.a
 
@@ -77,5 +82,9 @@ fclean:
 			@echo "${RED}jeej full fcleaner !${RESET}"
 
 re:			fclean all
+
+bonus:		${NAME} ${OBJS_BONUS}
+			@ar -rcs ${NAME} ${OBJS_BONUS}
+			@echo "${BLACK}jeej bonusser !${RESET}"
 
 .PHONY:		all clean fclean re
