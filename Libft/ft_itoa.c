@@ -6,10 +6,11 @@
 /*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:09:02 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/23 15:04:04 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/11/23 17:22:56 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
 static int	ft_intlen(int nb)
@@ -19,42 +20,29 @@ static int	ft_intlen(int nb)
 	len = 0;
 	while (nb /= 10)
 		len++;
-	return (len);
+	return (++len);
 }
 
 char		*ft_itoa(int n)
 {
 	char	*dest;
-	int		len;
+	int		i;
+	int		pos_neg;
 
-	if (!n)
-		return (NULL);
-	if (!(dest = ft_calloc(sizeof(char), (ft_intlen(n) + 1))))
+	if (n == INT_MIN)
+		return (ft_strdup("-2147483648"));
+	pos_neg = (n < 0) ? 1 : 0;
+	if (!(dest = ft_calloc(sizeof(char), ft_intlen(n) + 1 + pos_neg)))
 		return (NULL);
 	if (n < 0)
+		n = -n;
+	i = ft_intlen(n) + pos_neg;
+	while (i > 0)
 	{
-		dest[0] = '-';
-		n *= -1;
-	}
-	len = ft_intlen(n) + 1;
-	while (len)
-	{
-		dest[len-- - 1] = (n % 10) + 48;
+		dest[i-- - 1] = (n % 10) + 48;
 		n /= 10;
 	}
+	if (pos_neg)
+		dest[0] = '-';
 	return (dest);
 }
-
-
-
-
-#include <stdio.h>
-
-int		main(void)
-{
-	int n = 123456789;
-
-	printf("%s", ft_itoa(n));
-	return (0);
-}
-
