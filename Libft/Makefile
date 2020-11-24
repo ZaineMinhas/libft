@@ -6,7 +6,7 @@
 #    By: zminhas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2020/11/23 20:05:34 by zminhas          ###   ########.fr        #
+#    Updated: 2020/11/24 13:11:02 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,10 @@ SRCS	=	ft_atoi.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c
-SRCS_BONUS	=	
+
+SRCS_BONUS	=	ft_lstnew.c \
+				ft_lstadd_front.c \
+
 
 OBJS	=	${SRCS:.c=.o}
 
