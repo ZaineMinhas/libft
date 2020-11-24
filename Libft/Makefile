@@ -6,7 +6,7 @@
 #    By: zminhas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2020/11/24 13:11:02 by zminhas          ###   ########.fr        #
+#    Updated: 2020/11/24 16:07:24 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,9 @@ SRCS	=	ft_atoi.c \
 
 SRCS_BONUS	=	ft_lstnew.c \
 				ft_lstadd_front.c \
+				ft_lstsize.c \
+				ft_lstlast.c \
+				ft_lstadd_back.c
 
 
 OBJS	=	${SRCS:.c=.o}
@@ -67,7 +70,7 @@ NAME	=	libft.a
 
 .c.o:
 			@gcc -Wall -Wextra -Werror -c -I./includes $< -o ${<:.c=.o}
-			@echo "${PURPLE}Bien jeej de :$<${RESET}"
+			@echo "${LIGHTPURPLE}Bien jeej de :$<${RESET}"
 
 ${NAME}:	${OBJS}
 			@ar -rcs $@ $^
@@ -77,17 +80,18 @@ all:		${NAME}
 
 clean:
 			@rm -f ${OBJS}
-			@echo "${YELLOW}jeej cleaner !${RESET}"
+			@echo "${BLUE}jeej cleaner !${RESET}"
 
 fclean:
 			@rm -f ${OBJS}
 			@rm -f ${NAME}
+			@rm -f ${OBJS_BONUS}
 			@echo "${RED}jeej full fcleaner !${RESET}"
 
 re:			fclean all
 
-bonus:		${NAME} ${OBJS_BONUS}
+bonus:		${OBJS_BONUS}
 			@ar -rcs ${NAME} ${OBJS_BONUS}
-			@echo "${BLACK}jeej bonusser !${RESET}"
+			@echo "${PURPLE}jeej bonusser !${RESET}"
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re bonus
