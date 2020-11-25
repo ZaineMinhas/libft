@@ -6,7 +6,7 @@
 #    By: zminhas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2020/11/24 16:07:24 by zminhas          ###   ########.fr        #
+#    Updated: 2020/11/25 12:54:07 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,8 @@ SRCS_BONUS	=	ft_lstnew.c \
 				ft_lstadd_front.c \
 				ft_lstsize.c \
 				ft_lstlast.c \
-				ft_lstadd_back.c
+				ft_lstadd_back.c \
+				ft_lstdelone.c
 
 
 OBJS	=	${SRCS:.c=.o}
