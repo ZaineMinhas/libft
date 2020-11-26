@@ -6,7 +6,7 @@
 #    By: zminhas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2020/11/26 13:41:26 by zminhas          ###   ########.fr        #
+#    Updated: 2020/11/26 16:16:58 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,8 @@ SRCS_BONUS	=	ft_lstnew.c \
 				ft_lstadd_back.c \
 				ft_lstdelone.c \
 				ft_lstclear.c \
-				ft_lstiter.c
+				ft_lstiter.c \
+				ft_lstmap.c
 
 
 OBJS	=	${SRCS:.c=.o}
@@ -77,24 +78,28 @@ NAME	=	libft.a
 
 ${NAME}:	${OBJS}
 			@ar -rcs $@ $^
+			@clear
 			@echo "${GREEN}JeeJ fait !${RESET}"
 
 all:		${NAME}
 
 clean:
 			@rm -f ${OBJS}
+			@clear
 			@echo "${BLUE}jeej cleaner !${RESET}"
 
 fclean:
 			@rm -f ${OBJS}
 			@rm -f ${NAME}
 			@rm -f ${OBJS_BONUS}
+			@clear
 			@echo "${RED}jeej full fcleaner !${RESET}"
 
 re:			fclean all
 
 bonus:		${OBJS_BONUS}
 			@ar -rcs ${NAME} ${OBJS_BONUS}
+			@clear
 			@echo "${PURPLE}jeej bonusser !${RESET}"
 
 .PHONY:		all clean fclean re bonus
