@@ -6,7 +6,7 @@
 /*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 16:37:02 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/22 18:34:54 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/11/26 13:42:53 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,13 @@ static int	ft_word_number(char const *s, char c)
 	return (w);
 }
 
+void		ft_free(int i, char **dest)
+{
+	while (i)
+		free(dest[--i]);
+	free(dest);
+}
+
 char		**ft_split(char const *s, char c)
 {
 	char	**dest;
@@ -58,7 +65,10 @@ char		**ft_split(char const *s, char c)
 		while (*s && *s == c)
 			s++;
 		if (!(dest[i] = ft_substr(s, 0, ft_strlen_remix(s, c))))
+		{
+			ft_free(i, dest);
 			return (NULL);
+		}
 		s += ft_strlen_remix(s, c);
 	}
 	dest[i] = 0;
