@@ -6,7 +6,7 @@
 /*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 16:37:02 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/26 13:42:53 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/11/27 15:57:13 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char		**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	wnb = ft_word_number(s, c);
-	if (!(dest = malloc(sizeof(char *) * wnb)))
+	if (!(dest = malloc(sizeof(char *) * (wnb + 1))))
 		return (NULL);
 	i = -1;
 	while (++i < wnb)

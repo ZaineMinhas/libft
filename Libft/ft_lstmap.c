@@ -6,7 +6,7 @@
 /*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:15:07 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/27 15:31:59 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/11/27 15:33:36 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f) (void *), void (*del)(void *))
 
 	if (!lst)
 		return (NULL);
+	if (!f)
+		return (lst);
 	dest = NULL;
 	while (lst)
 	{

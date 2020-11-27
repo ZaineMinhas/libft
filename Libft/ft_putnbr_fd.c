@@ -6,7 +6,7 @@
 /*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 19:39:51 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/23 19:54:03 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/11/27 15:48:48 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long int nb;
+	unsigned int nb;
 
-	if (!n)
+	if (fd < 0)
 		return ;
 	if (n < 0)
 	{
 		write(fd, "-", 1);
-		nb = -(long int)n;
+		nb = -(unsigned int)n;
 	}
 	else
 		nb = n;
