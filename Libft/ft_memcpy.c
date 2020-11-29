@@ -6,7 +6,7 @@
 /*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 12:53:45 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/22 16:00:59 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/11/29 14:47:20 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	if (!src && !dest)
 		return (dest);
-	dest2 = dest;
-	src2 = src;
+	dest2 = (char *)dest;
+	src2 = (const char *)src;
 	while (n-- > 0)
 		dest2[n] = src2[n];
 	return ((void *)dest2);

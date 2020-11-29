@@ -6,7 +6,7 @@
 #    By: zminhas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2020/11/27 16:04:45 by zminhas          ###   ########.fr        #
+#    Updated: 2020/11/29 15:55:51 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ NAME	=	libft.a
 			@echo "${LIGHTPURPLE}Bien jeej de :$<${RESET}"
 
 $(NAME):	${OBJS}
+			@clear
 			@ar -rcs $@ $^
 			@clear
 			@echo "${GREEN}JeeJ fait !${RESET}"
@@ -96,10 +97,15 @@ fclean:
 			@echo "${RED}jeej full fcleaner !${RESET}"
 
 bonus:		${OBJS_BONUS}
+			@clear
 			@ar -rcs ${NAME} ${OBJS_BONUS}
 			@clear
 			@echo "${PURPLE}jeej bonusser !${RESET}"
 
+full:		all bonus
+			@clear
+			@echo "${BLUE}jeej fuller !${RESET}"
+
 re:			fclean all
 
-.PHONY:		all clean fclean re bonus
+.PHONY:		all clean fclean re bonus full
