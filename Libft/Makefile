@@ -6,7 +6,7 @@
 #    By: zminhas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2020/11/29 16:59:18 by zminhas          ###   ########.fr        #
+#    Updated: 2020/11/30 10:23:41 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,35 +32,35 @@ NAME	=	libft.a
 
 .c.o:
 			@gcc -Wall -Wextra -Werror -c -I./ $< -o ${<:.c=.o}
-			@echo "${LIGHTPURPLE}Bien jeej de :$<${RESET}"
+			@echo "${LIGHTPURPLE}Compilation de :$<${RESET}"
 
 $(NAME):	${OBJS}
 			@ar -rcs ${NAME} ${OBJS}
 			@clear
-			@echo "${GREEN}JeeJ fait !${RESET}"
+			@echo "${GREEN}Library created !${RESET}"
 
 all:		${NAME}
 
 clean:
 			@rm -f ${OBJS}
 			@clear
-			@echo "${BLUE}jeej cleaner !${RESET}"
+			@echo "${BLUE}Objs cleaned !${RESET}"
 
 fclean:
 			@rm -f ${OBJS}
 			@rm -f ${NAME}
 			@rm -f ${OBJS_BONUS}
 			@clear
-			@echo "${RED}jeej full fcleaner !${RESET}"
+			@echo "${RED}fclean done !${RESET}"
 
 bonus:		${OBJS_BONUS}
 			@ar -rcs ${NAME} ${OBJS_BONUS}
 			@clear
-			@echo "${PURPLE}jeej bonusser !${RESET}"
+			@echo "${PURPLE}Bonus !${RESET}"
 
 full:		all bonus
 			@clear
-			@echo "${BLUE}jeej fuller !${RESET}"
+			@echo "${BLUE}JeeJ fuller !${RESET}"
 
 re:			fclean all
 
