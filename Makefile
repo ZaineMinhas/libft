@@ -6,7 +6,7 @@
 #    By: zminhas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2020/11/30 10:23:41 by zminhas          ###   ########.fr        #
+#    Updated: 2020/11/30 17:38:17 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ NAME	=	libft.a
 
 $(NAME):	${OBJS}
 			@ar -rcs ${NAME} ${OBJS}
+			@ranlib ${NAME}
 			@clear
 			@echo "${GREEN}Library created !${RESET}"
 
@@ -44,7 +45,7 @@ all:		${NAME}
 clean:
 			@rm -f ${OBJS}
 			@clear
-			@echo "${BLUE}Objs cleaned !${RESET}"
+			@echo "${BLUE}Objects cleaned !${RESET}"
 
 fclean:
 			@rm -f ${OBJS}
@@ -55,6 +56,7 @@ fclean:
 
 bonus:		${OBJS_BONUS}
 			@ar -rcs ${NAME} ${OBJS_BONUS}
+			@ranlib ${NAME}
 			@clear
 			@echo "${PURPLE}Bonus !${RESET}"
 
