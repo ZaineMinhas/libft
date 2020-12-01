@@ -6,7 +6,7 @@
 /*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 13:40:09 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/01 17:00:55 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/12/01 17:22:05 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!f)
+	if (!f || !lst)
 		return ;
 	while (lst)
 	{
