@@ -6,7 +6,7 @@
 #    By: zminhas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2020/12/01 17:52:48 by zminhas          ###   ########.fr        #
+#    Updated: 2020/12/02 13:04:39 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,7 +86,7 @@ all:		${NAME}
 clean:
 			@rm -f ${OBJS}
 			@clear
-			@echo "${BLUE}Objects cleaned !${RESET}"
+			@echo "${RED}Objects cleaned !${RESET}"
 
 fclean:
 			@rm -f ${OBJS}
@@ -103,7 +103,7 @@ bonus:		${OBJS_BONUS}
 
 full:		all bonus
 			@clear
-			@echo "${BLUE}JeeJ fuller !${RESET}"
+			@echo "${PURPLE}JeeJ fuller !${RESET}"
 
 re:			fclean all
 
