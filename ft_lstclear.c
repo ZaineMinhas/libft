@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 12:54:37 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/26 13:31:13 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/12/05 13:56:01 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list *lst_tamp;
 
-	if (!*lst)
+	if (!lst || !del)
 		return ;
 	while (*lst)
 	{

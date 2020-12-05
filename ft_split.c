@@ -3,14 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 16:37:02 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/27 15:57:13 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/12/05 14:18:56 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	ft_free(int i, char **dest)
+{
+	while (i)
+		free(dest[i--]);
+	free(dest);
+}
 
 static int	ft_strlen_remix(char const *s, char c)
 {
@@ -39,13 +46,6 @@ static int	ft_word_number(char const *s, char c)
 			i++;
 	}
 	return (w);
-}
-
-void		ft_free(int i, char **dest)
-{
-	while (i)
-		free(dest[--i]);
-	free(dest);
 }
 
 char		**ft_split(char const *s, char c)
