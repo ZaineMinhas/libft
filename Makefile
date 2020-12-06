@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zminhas <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2020/12/02 13:04:39 by zminhas          ###   ########.fr        #
+#    Updated: 2020/12/06 16:10:30 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,6 +85,7 @@ all:		${NAME}
 
 clean:
 			@rm -f ${OBJS}
+			@rm -f ${OBJS_BONUS}
 			@clear
 			@echo "${RED}Objects cleaned !${RESET}"
 
