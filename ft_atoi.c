@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 17:50:02 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/22 13:28:25 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/12/08 17:03:34 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int		ft_atoi(const char *str)
 {
 	unsigned long long		nb;
+	unsigned long long		nb_tmp;
 	int						pos_neg;
 	int						i;
 
@@ -28,8 +29,9 @@ int		ft_atoi(const char *str)
 	nb = 0;
 	while (str[i] >= '0' && str[i] <= '9' && str[i])
 	{
+		nb_tmp = nb;
 		nb = nb * 10 + (str[i++] - 48);
-		if (nb > LLONG_MAX)
+		if (nb < nb_tmp || nb > LLONG_MAX)
 			return ((pos_neg == 1) ? -1 : 0);
 	}
 	return ((int)nb * pos_neg);
