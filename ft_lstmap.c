@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:15:07 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/12 13:32:06 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/12/12 13:49:46 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ t_list		*ft_lstmap(t_list *lst, void *(*f) (void *), void (*del)(void *))
 	t_list	*elemf;
 	t_list	*lst_start;
 
-	if (!lst)
+	if (!lst || !f)
 		return (NULL);
-	if (!f)
-		return (lst);
 	dest = NULL;
 	lst_start = lst;
 	while (lst)
