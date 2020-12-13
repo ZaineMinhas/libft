@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:09:02 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/23 17:22:56 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/12/13 16:18:45 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char		*ft_itoa(int n)
 	if (n == INT_MIN)
 		return (ft_strdup("-2147483648"));
 	pos_neg = (n < 0) ? 1 : 0;
-	if (!(dest = ft_calloc(sizeof(char), ft_intlen(n) + 1 + pos_neg)))
+	if (!(dest = (char *)ft_calloc(sizeof(char), ft_intlen(n) + 1 + pos_neg)))
 		return (NULL);
 	if (n < 0)
 		n = -n;

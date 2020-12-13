@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 16:37:02 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/05 14:18:56 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/12/13 16:20:53 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char		**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	wnb = ft_word_number(s, c);
-	if (!(dest = malloc(sizeof(char *) * (wnb + 1))))
+	if (!(dest = (char **)malloc(sizeof(char *) * (wnb + 1))))
 		return (NULL);
 	i = -1;
 	while (++i < wnb)
