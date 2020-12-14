@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 16:37:02 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/13 16:20:53 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/12/14 17:18:41 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	ft_free(int i, char **dest)
 {
 	while (i)
-		free(dest[i--]);
+		free(dest[--i]);
 	free(dest);
 }
 
