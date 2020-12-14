@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 13:10:36 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/14 15:07:35 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/12/14 17:24:07 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	(len > ft_strlen(s) - start + 1) ? len = ft_strlen(s) - start : len;
 	if (start > ft_strlen(s))
-	{
-		if (!(dest = (char *)ft_calloc(sizeof(char), 1)))
-			return (NULL);
-		return (dest);
-	}
+		return (ft_strdup(""));
 	if (!(dest = (char *)ft_calloc(sizeof(char), (len + 1))))
 		return (NULL);
 	i = -1;
