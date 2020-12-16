@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zminhas <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 13:49:08 by zminhas           #+#    #+#             */
-/*   Updated: 2020/11/25 14:26:36 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/12/16 15:04:14 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	int		j;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
 	i = 0;
 	while (s1[i] && ft_is_set(s1[i], set))

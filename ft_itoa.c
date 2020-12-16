@@ -6,11 +6,10 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:09:02 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/13 16:18:45 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/12/16 14:56:24 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 static int	ft_intlen(int nb)
