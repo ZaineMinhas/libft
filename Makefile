@@ -6,9 +6,19 @@
 #    By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2020/12/17 17:34:03 by zminhas          ###   ########.fr        #
+#    Updated: 2020/12/28 18:12:53 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+BLACK		= $(shell tput -Txterm setaf 0)
+RED			= $(shell tput -Txterm setaf 1)
+GREEN		= $(shell tput -Txterm setaf 2)
+YELLOW		= $(shell tput -Txterm setaf 3)
+LIGHTPURPLE	= $(shell tput -Txterm setaf 4)
+PURPLE		= $(shell tput -Txterm setaf 5)
+BLUE		= $(shell tput -Txterm setaf 6)
+WHITE		= $(shell tput -Txterm setaf 7)
+RESET		= $(shell tput -Txterm sgr0)
 
 SRCS	=	ft_atoi.c\
 			ft_bzero.c\
@@ -62,23 +72,36 @@ OBJS_BONUS	=	${SRCS_BONUS:.c=.o}
 NAME	=	libft.a
 
 .c.o:
-			gcc -Wall -Wextra -Werror -c -I./ $< -o ${<:.c=.o}
+			@gcc -Wall -Wextra -Werror -c -I./ $< -o ${<:.c=.o}
+			@echo "${LIGHTPURPLE}Compilation of :$<${RESET}"
 
 $(NAME):	${OBJS}
-			ar -rcs ${NAME} ${OBJS}
+			@ar -rcs ${NAME} ${OBJS}
+			@ranlib ${NAME}
+			@echo "${GREEN}Library created !${RESET}"
 
 all:		${NAME}
 
 clean:
-			rm -f ${OBJS} ${OBJS_BONUS}
+			@rm -f ${OBJS}
+			@rm -f ${OBJS_BONUS}
+			@echo "${RED}Objects cleaned !${RESET}"
 
-fclean:		clean
-			rm -f ${NAME}
+fclean:
+			@rm -f ${OBJS}
+			@rm -f ${NAME}
+			@rm -f ${OBJS_BONUS}
+			@echo "${RED}fclean done !${RESET}"
 
 bonus:		${OBJS_BONUS}
-			ar -rcs ${NAME} ${OBJS_BONUS}
+			@ar -rcs ${NAME} ${OBJS_BONUS}
+			@ranlib ${NAME}
+			@echo "${PURPLE}Bonus !${RESET}"
 
-full:		all bonus
+full:		${OBJS} ${OBJS_BONUS}
+			@ar -rcs ${NAME} ${OBJS} ${OBJS_BONUS}
+			@ranlib ${NAME}
+			@echo "${PURPLE}JeeJ fuller !${RESET}"
 
 re:			fclean all
 

@@ -6,11 +6,23 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:15:07 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/17 17:33:33 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/12/28 18:12:25 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	ft_free(t_list **lst)
+{
+	t_list	*tmp;
+
+	while (*lst)
+	{
+		tmp = *lst;
+		*lst = (*lst)->next;
+		free(tmp);
+	}
+}
 
 t_list		*ft_lstmap(t_list *lst, void *(*f) (void *), void (*del)(void *))
 {
@@ -27,10 +39,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f) (void *), void (*del)(void *))
 			if (del)
 				ft_lstclear(&elemf, del);
 			else
-			{
-				ft_lstiter(dest, &free);
-				free(dest);
-			}
+				ft_free(&dest);
 			return (NULL);
 		}
 		ft_lstadd_back(&dest, elemf);

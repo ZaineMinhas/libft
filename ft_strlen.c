@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 11:51:45 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/17 17:33:52 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/12/28 18:12:44 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlen(const char *s)
 {
 	size_t i;
 
+	if (!s)
+		return (0);
 	i = 0;
 	while (s[i])
 		i++;

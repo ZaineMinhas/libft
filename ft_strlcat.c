@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 15:07:03 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/17 17:33:51 by zminhas          ###   ########.fr       */
+/*   Updated: 2020/12/28 18:12:42 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 	size_t dest_len;
 	size_t i;
 
+	if (!src || !dest)
+		return (0);
 	dest_len = ft_strlen(dest);
 	if (dstsize <= dest_len)
 		return (dstsize + ft_strlen(src));
