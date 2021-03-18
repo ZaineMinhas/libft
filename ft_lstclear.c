@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 12:54:37 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/28 18:12:21 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/03/18 17:11:54 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *lst_tamp;
+	t_list	*lst_tamp;
 
 	if (!lst)
 		return ;

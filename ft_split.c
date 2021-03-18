@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 16:37:02 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/28 18:12:38 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/03/18 17:16:58 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_free(int i, char **dest)
 
 static int	ft_strlen_remix(char const *s, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] && s[i] != c)
@@ -31,8 +31,8 @@ static int	ft_strlen_remix(char const *s, char c)
 
 static int	ft_word_number(char const *s, char c)
 {
-	int i;
-	int w;
+	int	i;
+	int	w;
 
 	w = 0;
 	i = 0;
@@ -48,7 +48,7 @@ static int	ft_word_number(char const *s, char c)
 	return (w);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**dest;
 	int		wnb;
@@ -57,14 +57,16 @@ char		**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	wnb = ft_word_number(s, c);
-	if (!(dest = (char **)malloc(sizeof(char *) * (wnb + 1))))
+	dest = (char **)malloc(sizeof(char *) * (wnb + 1));
+	if (!dest)
 		return (NULL);
 	i = -1;
 	while (++i < wnb)
 	{
 		while (*s && *s == c)
 			s++;
-		if (!(dest[i] = ft_substr(s, 0, ft_strlen_remix(s, c))))
+		dest[i] = ft_substr(s, 0, ft_strlen_remix(s, c));
+		if (!dest)
 		{
 			ft_free(i, dest);
 			return (NULL);

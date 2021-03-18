@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 13:18:01 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/28 18:12:39 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/03/18 17:17:20 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	if (!s)
 		return (NULL);

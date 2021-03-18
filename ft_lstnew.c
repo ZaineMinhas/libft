@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 13:00:26 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/28 18:12:26 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/03/18 17:13:47 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*dest;
 
-	if (!(dest = (t_list *)malloc(sizeof(t_list))))
+	dest = (t_list *)malloc(sizeof(t_list));
+	if (!dest)
 		return (NULL);
 	dest->content = content;
 	dest->next = NULL;

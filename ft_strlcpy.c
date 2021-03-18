@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 15:08:21 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/28 18:12:43 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/03/18 17:29:34 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 	if (!dstsize)
 		return (ft_strlen(src));
 	if (dstsize)
+	{
 		while (src[i] && (i < dstsize - 1))
 		{
 			dest[i] = src[i];
 			i++;
 		}
+	}
 	dest[i] = 0;
 	return (ft_strlen(src));
 }

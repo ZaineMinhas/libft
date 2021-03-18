@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 12:44:36 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/28 18:12:11 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/03/18 17:00:19 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char *s2;
+	char	*s2;
 
 	if (!s || n < 0)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 11:19:49 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/28 18:12:32 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/03/18 17:15:06 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned const char *src2;
+	unsigned const char	*src2;
 	unsigned char		*dest2;
 	size_t				i;
 

@@ -6,13 +6,20 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 17:50:02 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/28 18:12:09 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/03/18 16:59:54 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+static int	ft_posneg_ret(int pos_neg)
+{
+	if (pos_neg)
+		return (-1);
+	return (0);
+}
+
+int	ft_atoi(const char *str)
 {
 	unsigned long long		nb;
 	unsigned long long		nb_tmp;
@@ -32,7 +39,7 @@ int		ft_atoi(const char *str)
 		nb_tmp = nb;
 		nb = nb * 10 + (str[i++] - 48);
 		if (nb < nb_tmp || nb > LLONG_MAX)
-			return ((pos_neg == 1) ? -1 : 0);
+			return (ft_posneg_ret(pos_neg));
 	}
 	return ((int)nb * pos_neg);
 }

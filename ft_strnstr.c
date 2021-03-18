@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 16:04:13 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/28 18:12:47 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/03/18 17:21:11 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	if (!*needle)
 		return ((char *)haystack);
@@ -28,5 +28,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		if (!needle[j])
 			return ((char *)(haystack + i));
 	}
-	return ((char *)NULL);
+	return ((char *) NULL);
 }

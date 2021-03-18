@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:09:02 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/28 18:12:18 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/03/18 17:11:01 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,22 @@ static int	ft_intlen(int nb)
 	int		len;
 
 	len = 0;
-	while (nb /= 10)
+	while (nb / 10)
+	{
+		nb /= 10;
 		len++;
+	}
 	return (++len);
 }
 
-char		*ft_itoa(int n)
+static int	ft_posneg(int n)
+{
+	if (n < 0)
+		return (1);
+	return (0);
+}
+
+char	*ft_itoa(int n)
 {
 	char	*dest;
 	int		i;
@@ -30,8 +40,9 @@ char		*ft_itoa(int n)
 
 	if (n == INT_MIN)
 		return (ft_strdup("-2147483648"));
-	pos_neg = (n < 0) ? 1 : 0;
-	if (!(dest = (char *)ft_calloc(sizeof(char), ft_intlen(n) + 1 + pos_neg)))
+	pos_neg = ft_posneg(n);
+	dest = (char *)ft_calloc(sizeof(char), ft_intlen(n) + 1 + pos_neg);
+	if (!dest)
 		return (NULL);
 	if (n < 0)
 		n = -n;

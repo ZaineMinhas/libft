@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:15:07 by zminhas           #+#    #+#             */
-/*   Updated: 2020/12/28 18:12:25 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/03/18 17:13:17 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	ft_free(t_list **lst)
 	}
 }
 
-t_list		*ft_lstmap(t_list *lst, void *(*f) (void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f) (void *), void (*del)(void *))
 {
 	t_list	*dest;
 	t_list	*elemf;
@@ -34,7 +34,8 @@ t_list		*ft_lstmap(t_list *lst, void *(*f) (void *), void (*del)(void *))
 	dest = NULL;
 	while (lst)
 	{
-		if (!(elemf = ft_lstnew(f(lst->content))))
+		elemf = ft_lstnew(f(lst->content));
+		if (!elemf)
 		{
 			if (del)
 				ft_lstclear(&elemf, del);
